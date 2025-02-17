@@ -29,12 +29,13 @@ class SCENE_OT_DensityFind(Operator):
         highest_vertex_count = 0
 
         for obj in context.scene.objects:
-            if obj.type == 'MESH':
-                vertex_count = len(obj.data.vertices)
-                
-                if vertex_count > highest_vertex_count:
-                    highest_vertex_count = vertex_count
-                    most_vertices_object = obj
+            if not obj.hide_viewport:
+                if obj.type == 'MESH':
+                    vertex_count = len(obj.data.vertices)
+                    
+                    if vertex_count > highest_vertex_count:
+                        highest_vertex_count = vertex_count
+                        most_vertices_object = obj
 
         if most_vertices_object:
             object.select_all(action='DESELECT')
@@ -240,6 +241,7 @@ class DensityFinder (Panel):
         bl_space_type = "VIEW_3D"
         bl_region_type = "UI"
         bl_category = "SEJFO"
+        bl_options = {"DEFAULT_CLOSED"}
 
         def draw_header(self, context):
             layout = self.layout
