@@ -2,6 +2,8 @@
 ### Requires Blender 4.2+
 ##### Blender 3.6 compatible versions will be added in the future.
 
+After installation of any of these extensions you'll find a SEJFO tab in your N-menu.
+
 ## Sejfo Tool Suite
 This is our general purpose extension with a set of tools focused on optimising scenes comprised by large SolidWorks assemblies.
 In this suite you'll find tools for finding and selecting all objects that matches a specified dimension interval (very useful for finding all screws in the scene), 
