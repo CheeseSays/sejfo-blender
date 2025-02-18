@@ -11,3 +11,15 @@ A tool to identify the most dense object is included as well. This tool will sel
 A tool to help creating a clean model hierarchy in Visual Components is included.
 
 ## Sejfo VC PostProc
+This is a set of tools for cleaning up scenes exported from Visual Components using the Blenderer add-on.
+### Action Killer
+This tool removes all animation data for static objects. When you export a scene from VC into Blender all objects (including static objects) get animation data. Removing all the animation data for static objects results in a lighter file. 
+In tests we've done with the simulations we create the animation data on static objects often equate to roughly 30% of the file size. 
+### Rotation Fixer
+When exporting from VC into Blender, an issue we often encounter is robot axises losing their rotation on some frames. Cleaning these kinds of issues by hand can be very time consuming, especially in long simulations, this tool aims to help reduce that time by automatically finding frames where the rotation differs and setting it to an absolute rotation.
+### Material Replacer (In active development)
+This tool comes with a selection of materials we use in our renders and works by replacing the materials of selected objects with more advanced materials of the selected type.
+
+## Sejfo Render Presets
+This a simple tool to set the render settings for the current scene to the default settings we use in our renders.
+A lot of these settings are set for quick renders that still are nice to look at. In most cases we don't have a lot of time to set aside for rendering.
